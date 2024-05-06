@@ -1,0 +1,17 @@
+@import "reset";
+@import "mixin";
+@import "fonts";
+@import "vars";
+@import "global";
+@import "libs";
+
+@import "./components/header";
+@import "./components/breadcrumbs";
+@import "./components/feedback";
+@import "./components/footer";
+
+//small component
+@import "./components/social";
+@import "./components/modal";
+@import "./components/form";
+@import "./components/fixed-menu";

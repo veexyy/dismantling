@@ -1,0 +1,45 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+
+      .breadcrumbs__link {
+        position: relative;
+
+        &::after {
+          content: "/";
+          color: inherit;
+          position: absolute;
+          right: -9px;
+          top: 0;
+
+        }
+      }
+    }
+
+    &:last-child {
+      .breadcrumbs__link {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 10px;
+    color: #717171;
+
+    &--active {
+      color: #2DAAE1;
+    }
+  }
+
+  @include small-tablet {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
