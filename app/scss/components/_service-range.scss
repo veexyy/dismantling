@@ -1,0 +1,110 @@
+.service-range{
+  &__wrapper {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: $default-text;
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.08;
+      background-image: url('../../images/all-img/service-range-bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }  
+  }
+  &__container {
+    color: white;
+      position: relative;
+      z-index: 1;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      @include small-tablet {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }  
+  &__title {
+      color: white;
+      font-size: 44px;
+      margin-bottom: 20px;
+      &-special_text {
+        color: $color-orange;
+      }
+      @include small-tablet {
+        font-size: 24px;
+      }
+    }
+  &__subtitle {
+    font-size: 18px;
+    margin-bottom: 70px;
+    @include small-tablet {
+      font-size: 12px;
+      margin-bottom: 60px;
+    }
+  }
+  &__list { 
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    row-gap: 60px;
+    @include tablet {
+      grid-template-columns: repeat(3, auto);
+    }
+    @include small-tablet {
+      grid-template-columns: repeat(2, auto);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+  &__item {
+    max-width: 278px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-title {
+      color: $color-orange;
+      margin-bottom: 5px;
+    }
+    
+    &-text:hover {
+      color: $color-orange;
+      cursor: pointer;
+      text-decoration-line: underline;
+    } 
+    @include small-tablet {
+      max-width: 100%;
+    }
+  }
+  &__item:last-child {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    max-width: 100%;
+    background-color: $default-text;
+    padding: 21px 30px;
+    border-radius: 20px;
+    @include tablet {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+  }
+  &__special-text {
+    grid-column-start: 3;
+    font-weight: 300;
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 70px;
+    @include small-tablet {
+      font-size: 12px;
+    }
+  }
+}
