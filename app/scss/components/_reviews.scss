@@ -107,8 +107,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 70px;
     @include mobile {
       flex-direction: column;
+      margin-bottom: 50px;
       gap: 10px;
     }
     &-left {
