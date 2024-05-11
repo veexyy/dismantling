@@ -285,6 +285,110 @@
     </div>
   </div>
 </section>
+    <section class="requisites">
+  <div class="container requisites__container">
+    <div class="requisites__left">
+      <h2 class="requisites__left-title title">Реквизиты</h2>
+      <div class="requisites__text-list">
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
+        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>        
+      </div>
+    </div>
+    <div class="requisites__right"> 
+      <h2 class="requisites__right-title title">Оставьте заявку и мы свяжемся с вами в течении 5 минут!</h2>
+      <form class="requisites__form">
+        <div class="requisites__form-top">
+          <label class="requisites__form-item">
+            Имя
+            <input class="form__input requisites__form-input" placeholder="Иванов Иван" type="text" name="name" id="name">
+          </label>
+          <label class="requisites__form-item" for="phone">
+            Телефон
+            <input class="form__input requisites__form-input" type="tel" id="tel" placeholder="+7 (999)999-99-99" type="tel" id="tel" required />
+          </label>
+          <label class="requisites__form-item" for="date">
+            Дата звонка мастера
+            <input class="form__input requisites__form-input" required type="date" id="date" />        
+          </label>
+          <label class="requisites__form-item" for="time">
+            Время звонка мастера
+            <input class="form__input requisites__form-input" type="time" value="09:00" min="09:00" max="21:00" id="time"/>
+          </label>
+        </div>
+        <div class="requisites__options">
+          <div class="requisites__options-title">Выберите одну или несколько необходимых услуг</div>
+           <select class="requisites__options-group" multiple="multiple">
+            <option class="form__input requisites__options-input" selected>Демонтаж стен</option>
+            <option class="form__input requisites__options-input">Демонтаж квартиры</option>
+            <option class="form__input requisites__options-input">Демонтаж домов</option>
+            <option class="form__input requisites__options-input">Демонтаж пола</option>
+            <option class="form__input requisites__options-input">Демонтаж потолка</option>
+            <option class="form__input requisites__options-input">Демонтаж сантехкабины</option>                  
+            <option class="form__input requisites__options-input">Алмазная резка</option>
+            <option class="form__input requisites__options-input">Другие услуги</option>
+          </select>
+        </div> 
+        <div class="requisites__form-bottom">
+          <label class="requisites__bottom-item">Что необходимо сделать?
+            <input class="form__input requisites__bottom-input" placeholder="Описание" type="text" name="" id="">
+          </label>
+          <div class="requisites__bottom-file" data-label-file>
+            <div class="requisites__bottom-file-icon">
+              <img src="../images/icons/file-icon.svg" alt="прикрепить файл">
+            </div>
+            <div class="requisites__bottom-text file-select-button">
+              <p class="requisites__bottom-file-title ">Прикрепить фото</p>
+              <p class="requisites__bottom-file-subtitle">Пометка про формат , размер и колличество загружаемых фото</p>
+            </div>
+            <input style="display: none" type="file" name="file-input-calc" id="file-input-calc">
+          </div>
+          <button class="btn" type="submit">Получить консультацию</button>
+          <label class= "requisites__form-bottom-checkbox" for="input-checkbox">
+            <input checked type="checkbox">
+            <span>Согласен на обработку персональных данных, договор публичной оферты</span>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const inputDate = document.getElementById('date');
+    const currentDate = new Date().toISOString().split('T')[0];
+    inputDate.value = currentDate;
+    const inputTel = document.getElementById('tel');
+
+  inputTel.addEventListener('mouseover', function() {
+    this.placeholder = '+7 (___) ___-__-__';
+  });
+
+  inputTel.addEventListener('mouseout', function() {
+    this.placeholder = '+7 (999)999-99-99';
+  });
+  let fileSelect = document.querySelectorAll("[data-label-file]");
+
+fileSelect.forEach((item) => {
+  let fileInput = item.querySelector('input[type="file"]');
+
+  item.addEventListener("click", function () {
+    fileInput.click();
+  });
+
+  fileInput.onchange = function () {
+    let filename = fileInput.files[0].name;
+    let selectName = item.querySelector(".file-select-button");
+    selectName.innerText = filename;
+  };
+});
+  </script>
+</section>
   </main>
   <footer class="footer">
   <div class="container footer__container">
