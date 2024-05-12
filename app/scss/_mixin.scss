@@ -31,6 +31,11 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $lines-to-show;
 }
+@mixin desktop {
+  @media (max-width: (1536px)) {
+    @content;
+  }
+}
 
 @mixin large {
   @media (max-width: (1200px)) {

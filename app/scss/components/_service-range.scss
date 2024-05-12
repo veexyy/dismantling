@@ -1,6 +1,7 @@
 .service-range{
   &__wrapper {
     max-width: 1920px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -92,7 +93,13 @@
     border-radius: 20px;
     @include tablet {
       grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    @include mobile {
+      grid-column-start: 1;
       grid-column-end: 1;
+      padding: 20px 15px;
+      font-size: 12px;
     }
   }
   &__special-text {

@@ -1,5 +1,7 @@
 .about{
-  position: relative;
+  &__wrapper {
+    position: relative;
+  }
   &__container{
     width: 100%;
     position: relative;
@@ -49,17 +51,19 @@
   }
   &__right{
     max-width: 1336px;
+    width: 65%;
     position: absolute;
     right: 0;
     z-index: -1;
     bottom: -86px;
     img{
-      width: full;
+      width: 100%;
       object-fit: cover;
-      height: full;
     }
-    @include small-tablet{
+    @include tablet{
+      width: 100%;
       max-width: max-content;
+      height: 100%;
       position: relative;
       bottom: 0;
     }
