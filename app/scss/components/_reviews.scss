@@ -1,11 +1,11 @@
 .reviews {
   &__container {
-    margin-top: 100px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     @include small-tablet {
-      margin-top: 60px;
+      padding-top: 60px;
     }
   }
   &__title {
@@ -20,8 +20,9 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: 30px;
+    margin-bottom: 70px;
     @include tablet {
-      margin-top: 50px;
+      margin-bottom: 50px;
       grid-template-columns: repeat(2, auto);
     }
     @include mobile {
@@ -30,18 +31,6 @@
     }
   }
   &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    // max-width: 382px;
-    padding: 20px;
-    -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.15);
-    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.15);
-    border-radius: 20px;
-    @include small-tablet {
-      padding: 20px 10px 15px;
-    }
     &-avatar {
       max-width: 50px;
       min-height: 50px;
@@ -55,6 +44,18 @@
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    // max-width: 382px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.15);
+    border-radius: 20px;
+    @include small-tablet {
+      padding: 20px 10px 15px;
     }
   }
   &__box {
@@ -91,11 +92,9 @@
     padding-left: 83px;
     padding-right: 83px;
     align-self: center;
-    margin-top: 70px;
     @include mobile {
       width: 100%;
       display: block;
-      margin-top: 50px;
     }
   }
   &__bottom {

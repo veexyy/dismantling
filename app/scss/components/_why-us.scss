@@ -1,25 +1,31 @@
 .why-us{
+  &__wrapper {
+    padding-top: 100px;
+  }
   &__container {
     position: relative;
+    @include small-tablet {
+      padding-top: 60px;
+      font-size: 25px;
+    }
   }
   &__title {
     font-weight: 700;
     font-size: 44px;
-    margin-top: 100px;
     color: $color-orange;
+    margin-bottom: 15px;
     &-default_text {
       color: $default-text;
     }
     @include small-tablet {
-      margin-top: 60px;
       font-size: 25px;
     }
   }
   &__subtitle {
     font-weight: 500;
+    max-width: 618px;
     font-size: 35px;
     color: $default-text;
-    margin-top: 15px;
     margin-bottom: 83px;
     &-color_text {
       color: $color-orange;
@@ -34,6 +40,7 @@
     align-items: center;
     gap: 10px;
     color: $default-text;
+    margin-bottom: 20px;
   }
   &__list {
     display: flex;
@@ -58,7 +65,6 @@
     &-text {
       font-weight: 300;
       font-size: 22px;
-      margin-top: 20px;
       @include small-tablet {
         font-size: 12px;
       }

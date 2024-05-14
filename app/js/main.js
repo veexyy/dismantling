@@ -28,7 +28,7 @@ menuLink.addEventListener("click", function (e) {
 });
 
 // Фиксированная меню справа на странице, вкл/вык
-fixedMenuBtn.addEventListener("click", function () {
+fixedMenuBtn && fixedMenuBtn.addEventListener("click", function () {
   fixedMenuBtn.classList.toggle("fixed-menu__btn--active");
   fixedMenuInner.classList.toggle("fixed-menu__inner--visible");
 });
@@ -55,6 +55,12 @@ let inputs = document.querySelectorAll('input[type="tel"]');
 let im = new Inputmask("+7 (999) 999-99-99");
 im.mask(inputs);
 //Валидация номера(конец)
+
+// Установка сегодняшней даты в календаре на странице реквизиты(начало)
+const inputDate = document.getElementById('date');
+const currentDate = new Date().toISOString().split('T')[0];
+inputDate.value = currentDate;
+// Установка сегодняшней даты в календаре на странице реквизиты(конец)
 
 //Открытие вспывающих списков(начало)
 const submenuBtn = document.querySelectorAll(".submenu__btn[data-dropdown]");

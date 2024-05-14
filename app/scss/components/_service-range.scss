@@ -1,7 +1,9 @@
 .service-range{
-  &__wrapper {
+  &__wrapper{
+    padding-top: 100px;
+  }
+  &__background {
     max-width: 1920px;
-    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -53,8 +55,10 @@
   }
   &__list { 
     display: grid;
+    margin-bottom: 70px;
     grid-template-columns: repeat(4, auto);
     row-gap: 60px;
+    column-gap: 30px;
     @include tablet {
       grid-template-columns: repeat(3, auto);
     }
@@ -109,7 +113,6 @@
   &__text {
     font-weight: 300;
     font-size: 22px;
-    margin-top: 70px;
     @include small-tablet {
       font-size: 12px;
     }

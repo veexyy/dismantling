@@ -3,16 +3,16 @@
     <div class="requisites__left">
       <h2 class="requisites__left-title title">Реквизиты</h2>
       <div class="requisites__text-list">
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>
-        <div class="requisites__text-item">ИНН: 1526846462436468349648</div>        
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>
+        <span class="requisites__text-item">ИНН: 1526846462436468349648</span>        
       </div>
     </div>
     <div class="requisites__right"> 
@@ -23,15 +23,15 @@
             Имя
             <input class="form__input requisites__form-input" placeholder="Иванов Иван" type="text" name="name" id="name">
           </label>
-          <label class="requisites__form-item" for="phone">
+          <label class="requisites__form-item">
             Телефон
-            <input class="form__input requisites__form-input" type="tel" id="tel" placeholder="+7 (999)999-99-99" type="tel" id="tel" required />
+            <input class="form__input requisites__form-input" type="tel" id="tel" placeholder="+7 (999) 999-99-99" required />
           </label>
-          <label class="requisites__form-item" for="date">
+          <label class="requisites__form-item">
             Дата звонка мастера
             <input class="form__input requisites__form-input" required type="date" id="date" />        
           </label>
-          <label class="requisites__form-item" for="time">
+          <label class="requisites__form-item">
             Время звонка мастера
             <input class="form__input requisites__form-input" type="time" value="09:00" min="09:00" max="21:00" id="time"/>
           </label>
@@ -109,7 +109,7 @@
           <label class="requisites__bottom-item">Что необходимо сделать?
             <textarea class="form__input requisites__bottom-input" placeholder="Описание" type="text" rows="3"></textarea>
           </label>
-          <div class="requisites__bottom-file" data-label-file>
+          <label class="requisites__bottom-file" data-label-file>
             <div class="requisites__bottom-file-icon">
               <img loading="lazy" src="../images/icons/file-icon.svg" alt="прикрепить файл">
             </div>
@@ -118,9 +118,9 @@
               <p class="requisites__bottom-file-subtitle">Пометка про формат , размер и колличество загружаемых фото</p>
             </div>
             <input style="display: none" type="file" name="file-input-calc" id="file-input-calc">
-          </div>
+          </label>
           <button class="btn" type="submit">Получить консультацию</button>
-          <label class= "requisites__form-bottom-checkbox" for="input-checkbox">
+          <label class="requisites__form-bottom-checkbox">
             <input checked type="checkbox">
             <span>Согласен на обработку персональных данных, договор публичной оферты</span>
           </label>
@@ -128,33 +128,4 @@
       </form>
     </div>
   </div>
-  <script>
-    const inputDate = document.getElementById('date');
-    const currentDate = new Date().toISOString().split('T')[0];
-    inputDate.value = currentDate;
-    const inputTel = document.getElementById('tel');
-
-  inputTel.addEventListener('mouseover', function() {
-    this.placeholder = '+7 (___) ___-__-__';
-  });
-
-  inputTel.addEventListener('mouseout', function() {
-    this.placeholder = '+7 (999)999-99-99';
-  });
-  let fileSelect = document.querySelectorAll("[data-label-file]");
-
-fileSelect.forEach((item) => {
-  let fileInput = item.querySelector('input[type="file"]');
-
-  item.addEventListener("click", function () {
-    fileInput.click();
-  });
-
-  fileInput.onchange = function () {
-    let filename = fileInput.files[0].name;
-    let selectName = item.querySelector(".file-select-button");
-    selectName.innerText = filename;
-  };
-});
-  </script>
 </section>
