@@ -56,7 +56,7 @@
   &__form {
    &-top {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     @include large {
       grid-template-columns: repeat(1, 1fr);
@@ -69,7 +69,7 @@
     }
     
     @include mobile {
-      grid-template-columns: repeat(1, auto);
+      grid-template-columns: repeat(1, 1fr);
     }
     &-bottom {
       display: grid;
@@ -87,7 +87,7 @@
         }
       }
       @include large {
-        grid-template-columns: repeat(1, auto);
+        grid-template-columns: repeat(1, 1fr);
         gap: 15px;
       }
     }

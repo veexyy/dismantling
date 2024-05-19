@@ -1,11 +1,12 @@
 .why-us{
-  &__wrapper {
-    padding-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  @include small-tablet {
+    padding-top: 60px;
   }
   &__container {
     position: relative;
     @include small-tablet {
-      padding-top: 60px;
       font-size: 25px;
     }
   }
@@ -27,7 +28,7 @@
     font-size: 35px;
     color: $default-text;
     margin-bottom: 83px;
-    &-color_text {
+    span {
       color: $color-orange;
     }
     @include small-tablet {
@@ -46,14 +47,25 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding-bottom: 45px;
   }
-  &__item {
-    max-width: 728px;
-    &:last-child {
+  &__item { 
+    &-wrapper {
+      max-width: 728px;
+     &--width {
       max-width: 494px;
+     }
     }
     &-icon {
-      max-width: 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-shrink: 0;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
     &-title {
       font-size: 25px;
@@ -71,21 +83,40 @@
     }
   }
   &__left {
-    max-width: 736px;
-    width: 100%;
-    max-height: 943px;
+    // width: 60%;
+    height: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 12px;
     z-index: -1;
     img { 
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
-    @include tablet {
+    @include small-tablet {
       max-width: 100%;
       position: relative;
     }
   }
+&__team { 
+  max-height: 670px;
+  width: 100%;
+  margin: 0 auto;
+  &::before {
+    display: block;
+    content: "";
+  }
+  img {
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    aspect-ratio: 1215 / 670;
+  }
+}
 }

@@ -1,6 +1,8 @@
 .reviews {
+  padding-bottom: 50px;   
+  padding-top: 100px;
+  
   &__container {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,15 +20,15 @@
   }
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 70px;
     @include tablet {
       margin-bottom: 50px;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, 1fr);
     }
     @include mobile {
-      grid-template-columns: repeat(1, auto);
+      grid-template-columns: repeat(1, 1fr);
       justify-items: center;
     }
   }
@@ -34,6 +36,10 @@
     &-avatar {
       max-width: 50px;
       min-height: 50px;
+      max-height: 50px;
+      img {
+        border-radius: 100%;
+      }
     }
     &-header {
       display: flex;
@@ -107,10 +113,10 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 70px;
+    gap: 10px;
     @include mobile {
       flex-direction: column;
       margin-bottom: 50px;
-      gap: 10px;
     }
     &-left {
       font-weight: 300;
