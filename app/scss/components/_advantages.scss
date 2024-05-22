@@ -103,6 +103,9 @@
         span {
           font-weight: 500;
         }
+        @include small-tablet {
+          font-size: 11px;
+        }
       }
     }
   }
