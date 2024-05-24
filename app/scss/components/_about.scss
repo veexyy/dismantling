@@ -66,11 +66,15 @@
     z-index: -1;
     bottom: -86px;
     img{
-      width: 100%;
+      margin-left: auto;      
+      width: 65%;
       object-fit: cover;
       @include small-tablet{
         margin-left: auto;
         width: 80%;
+      }
+      @include mobile {
+        width: 100%;
       }
     }
     @include small-tablet{

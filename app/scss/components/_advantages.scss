@@ -94,7 +94,8 @@
           object-fit: cover;
         }
         @include small-tablet {
-          min-width: 35px;
+          width: 30px;
+          height: 30px;
         }
       }
       &-text {
@@ -106,6 +107,9 @@
         @include small-tablet {
           font-size: 11px;
         }
+      }
+      @include small-tablet {
+        gap: 15px;
       }
     }
   }

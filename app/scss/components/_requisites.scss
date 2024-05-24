@@ -30,16 +30,31 @@
   &__right {
     max-width: 728px;
     width: 100%;
+    @include tablet {
+        max-width: 100%;
+      }
     &-title {
       text-align: left;
       margin-bottom: 51px;  
       font-size: 35px;
+      
       @include mobile {
         font-size: 25px;
       }
     }
    }
   &__text {
+    &-group {
+      display: flex;
+      gap: 4px;
+      @include tablet {
+        flex-direction: column;
+      }
+      @include small-tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
     &-list {
       display: flex;
       flex-direction: column;
@@ -51,8 +66,8 @@
         grid-template-columns: repeat(3, 1fr);
       }
       @include small-tablet {
-        grid-template-columns: repeat(2, 1fr);
-        font-size: 14px;
+        display: flex;
+        flex-direction: column;
       }
       @include mobile {
         display: flex;
@@ -60,10 +75,33 @@
         gap: 15px;
       }
     }
+    &-item:nth-child(-n+7) {
+      grid-column: 1 / span 1;
+    }
+    &-item:nth-child(8){
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 7;
+    }
+    &-group {
+      &--first {
+        grid-column: 3 / 3;
+        grid-row: 1 / span 1;
+      }
+      &--second {
+        grid-column: 3 / 3;
+        grid-row: 2 / span 1;
+      }
+      &--third {
+        min-height: 50px;
+        grid-column: 3 / 3;
+        grid-row: 3 / span 1;
+      }
+    }
   }
   &__form {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 20px;
    &-top {
     display: grid;
