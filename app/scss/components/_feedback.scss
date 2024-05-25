@@ -157,6 +157,9 @@
       flex-basis: 50%;
       margin-right: 20px;
     }
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__form {
@@ -188,7 +191,8 @@
     }
 
     @include mobile {
-      align-self: center;
+      // align-self: center;
+      display: none;
     }
   }
 
